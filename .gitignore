@@ -1,11 +1,12 @@
 # Godot 4
-.import/
-*.import
-.godot/
-*.gdshadercache
-*.res
-*.uuid
-export/
-# 系统缓存文件
+# 按用户要求：Godot 缓存文件全部纳入仓库，以下规则已注释
+# .import/
+# *.import
+# .godot/
+# *.gdshadercache
+# *.res
+# *.uuid
+# export/
+# 系统缓存文件（系统级临时文件，不纳入仓库）
 .DS_Store
 Thumbs.db
