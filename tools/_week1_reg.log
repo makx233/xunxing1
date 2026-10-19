@@ -1,0 +1,280 @@
+﻿Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+Godot_v4.7.2-stable_win64_console.exe : ERROR: McpInteractionServer: Failed to listen on port 9090, error: 22
+所在位置 行:1 字符: 258
++ ... lyContinue; & $godot --headless --path $proj --script "res://tools/pr ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR: McpInter...9090, error: 22:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://autoload/mcp_interaction_server.gd:38)
+========== 一周目 端到端自检 ==========
+  ✓ week1_dialogue.json 能解析成字典
+  ✓ 里有 chapter 键 week1
+  ✓ prelude_rooms.json 里有 dorm_room
+  ✓ 第一天宿舍变体 dorm_room_d1a / dorm_room_d1b 存在
+  ✓ chapter 里有序列
+  ✓ 序列 s0_maze 存在
+  ✓ 背景键 dorm_corridor 有效
+  ✓ 背景键 dorm_room 有效
+  ✓ 背景键 black 有效
+  ✓ 背景键 dorm_room 有效
+  ✓ 房间 dorm_room_d1a 在 prelude_rooms.json 里
+  ✓ 目标物件「室友的书桌」确实在房间 dorm_room_d1a 的 items 里
+  ✓ peek 物件「室友的书桌」确实在房间 dorm_room_d1a 的 items 里
+  ✓ 背景键 dorm_room 有效
+  ✓ 房间 dorm_room_d1b 在 prelude_rooms.json 里
+  ✓ 目标物件「黑箱」确实在房间 dorm_room_d1b 的 items 里
+  ✓ 面板 gesture 在登记表里
+  ✓ 面板 gesture 的脚本文件存在（res://scripts/week1/panel_gesture.gd）
+  ✓ 序列 s1_phone 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 面板 memo 在登记表里
+  ✓ 面板 memo 的脚本文件存在（res://scripts/week1/panel_memo.gd）
+  ✓ 序列 s2_books 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 房间 dorm_room 在 prelude_rooms.json 里
+  ✓ 目标物件「书架」确实在房间 dorm_room 的 items 里
+  ✓ peek 物件「书架」确实在房间 dorm_room 的 items 里
+  ✓ 面板 bookshelf 在登记表里
+  ✓ 面板 bookshelf 的脚本文件存在（res://scripts/week1/panel_bookshelf.gd）
+  ✓ 序列 s3_desk 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 房间 dorm_room 在 prelude_rooms.json 里
+  ✓ 目标物件「室友的书桌」确实在房间 dorm_room 的 items 里
+  ✓ peek 物件「室友的书桌」确实在房间 dorm_room 的 items 里
+  ✓ 面板 desk 在登记表里
+  ✓ 面板 desk 的脚本文件存在（res://scripts/week1/panel_desk.gd）
+  ✓ 序列 s4_soup 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 面板 soup 在登记表里
+  ✓ 面板 soup 的脚本文件存在（res://scripts/week1/panel_soup.gd）
+  ✓ 序列 s5_wardrobe 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 房间 dorm_room 在 prelude_rooms.json 里
+  ✓ 目标物件「衣柜」确实在房间 dorm_room 的 items 里
+  ✓ peek 物件「衣柜」确实在房间 dorm_room 的 items 里
+  ✓ 面板 wardrobe 在登记表里
+  ✓ 面板 wardrobe 的脚本文件存在（res://scripts/week1/panel_wardrobe.gd）
+  ✓ 序列 s6_ending 存在
+  ✓ 背景键 dorm_room 有效
+  ✓ 一整幕里六个面板的顺序对（黑箱迷宫从第一天走位里弹，不在对话行里）（["gesture", "memo", "bookshelf", "desk", "soup", "wardrobe"]）
+  ✓ 五次走位的目标顺序对（["室友的书桌", "黑箱", "书架", "室友的书桌", "衣柜"]）
+  ✓ s5_wardrobe 里已经没有收尾的 title 行（["space", "n", "m", "m", "room", "goal", "peek", "free", "panel", "n", "m", "m", "n", "m"]）
+  ✓ s6_ending 就是那段收尾（["space", "hide", "title"]）
+  ✓ 衣柜面板在登记表里有脚本路径（res://scripts/week1/panel_wardrobe.gd）
+  ✓ 衣柜第①屏没有参与排版的文字节点（文字重叠的地基）（实测 0 个（-1 = 面板没提供这个方法））
+  ✗ 衣柜界面可见文字块两两求交：0 对重叠（实测 7 对重叠 / 共 8 个可见文字块（含手绘 4 个））
+      · 重叠：PanelExit(✕ 退出) [P: (208.0, 104.0), S: (892.0, 512.0)] × PanelTitle(衣柜) [P: (234.0, 122.0), S: (840.0, 31.0)]
+      · 重叠：PanelExit(✕ 退出) [P: (208.0, 104.0), S: (892.0, 512.0)] × @Label@47(点一件衣服，翻翻它的) [P: (234.0, 457.0), S: (840.0, 34.0)]
+      · 重叠：PanelExit(✕ 退出) [P: (208.0, 104.0), S: (892.0, 512.0)] × PanelHint(点一件衣服，翻它的口) [P: (234.0, 578.0), S: (840.0, 20.0)]
+      · 重叠：PanelExit(✕ 退出) [P: (208.0, 104.0), S: (892.0, 512.0)] × (手绘文字) [P: (249.0, 408.0), S: (168.0, 26.0)]
+      · 重叠：PanelExit(✕ 退出) [P: (208.0, 104.0), S: (892.0, 512.0)] × (手绘文字) [P: (463.0, 408.0), S: (168.0, 26.0)]
+  ✓ 衣柜界面没有文字被挤爆（最小尺寸 ≤ 实际尺寸）（实测 0 个被挤爆）
+  ✓ 衣柜常量表 CLOTHES 是四件（实测 4 件）
+  ✓ 主视图的颜色逐件读 CLOTHES（点哪件画哪件的色）
+  ✓ 三件外套有口袋 / 围巾没有口袋，与 CLOTHES.pockets 一致
+  ✓ 点围巾 → 主视图标题说的是围巾（不是外套）（围巾 · 摊开）
+  ✓ 围巾上没有口袋可点（右侧那块命中区返回 -1）（实测 -1）
+  ✓ 点第三件（红）→ 标题是红色外套（红色外套 · 摊平的主视图）
+  ✓ 红外套上右侧那块是「右上袋」（第 2 个口袋）（实测 1）
+  ✓ 读心术面板在登记表里（week1_panels.gd）
+  ✓ 读心术面板的脚本文件确实存在（res://scripts/week1/panel_mindread.gd）
+  ✓ solve_1089(123) 认这个数（{ "ok": true, "num": 123, "rev": 321, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(123).rev = 321（{ "ok": true, "num": 123, "rev": 321, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(123).diff = 198（{ "ok": true, "num": 123, "rev": 321, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(123).past = 1（{ "ok": true, "num": 123, "rev": 321, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(123).future = 8（{ "ok": true, "num": 123, "rev": 321, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(456) 认这个数（{ "ok": true, "num": 456, "rev": 654, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(456).rev = 654（{ "ok": true, "num": 456, "rev": 654, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(456).diff = 198（{ "ok": true, "num": 456, "rev": 654, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(456).past = 1（{ "ok": true, "num": 456, "rev": 654, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(456).future = 8（{ "ok": true, "num": 456, "rev": 654, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(789) 认这个数（{ "ok": true, "num": 789, "rev": 987, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(789).rev = 987（{ "ok": true, "num": 789, "rev": 987, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(789).diff = 198（{ "ok": true, "num": 789, "rev": 987, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(789).past = 1（{ "ok": true, "num": 789, "rev": 987, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(789).future = 8（{ "ok": true, "num": 789, "rev": 987, "diff": 198, "past": 1, "future": 8 }）
+  ✓ solve_1089(591) 认这个数（{ "ok": true, "num": 591, "rev": 195, "diff": 396, "past": 3, "future": 6 }）
+  ✓ solve_1089(591).rev = 195（{ "ok": true, "num": 591, "rev": 195, "diff": 396, "past": 3, "future": 6 }）
+  ✓ solve_1089(591).diff = 396（{ "ok": true, "num": 591, "rev": 195, "diff": 396, "past": 3, "future": 6 }）
+  ✓ solve_1089(591).past = 3（{ "ok": true, "num": 591, "rev": 195, "diff": 396, "past": 3, "future": 6 }）
+  ✓ solve_1089(591).future = 6（{ "ok": true, "num": 591, "rev": 195, "diff": 396, "past": 3, "future": 6 }）
+  ✓ solve_1089(100) 判为不合法（{ "ok": false, "num": 100, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ solve_1089(111) 判为不合法（{ "ok": false, "num": 111, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ solve_1089(191) 判为不合法（{ "ok": false, "num": 191, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ solve_1089(293) 判为不合法（{ "ok": false, "num": 293, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ solve_1089(99) 判为不合法（{ "ok": false, "num": 99, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ solve_1089(1000) 判为不合法（{ "ok": false, "num": 1000, "rev": 0, "diff": 0, "past": 0, "future": 0 }）
+  ✓ reverse3(123) = 321（321）
+  ✓ sum_1089(198) = 1089（实测 1089）
+  ✓ sum_1089(297) = 1089（实测 1089）
+  ✓ sum_1089(396) = 1089（实测 1089）
+  ✓ sum_1089(495) = 1089（实测 1089）
+  ✓ sum_1089(594) = 1089（实测 1089）
+  ✓ sum_1089(693) = 1089（实测 1089）
+  ✓ sum_1089(792) = 1089（实测 1089）
+  ✓ sum_1089(891) = 1089（实测 1089）
+  ✓ 100..999 里所有合法数的 rev / diff 都对得上（含 100、1000 的边界）
+  ✓ 100..999 里所有合法数的 diff 都落在那八个里且加起来是 1089
+  ✓ week1_1.gd 的 DAY_ONE_SEQS 里有 s4b_1089（["s0_maze", "s1_phone", "s2_books", "s3_desk", "s4_soup", "s4b_1089", "s5_wardrobe"]）
+  ✓ s4b_1089 紧跟在 s4_soup 后面（["s0_maze", "s1_phone", "s2_books", "s3_desk", "s4_soup", "s4b_1089", "s5_wardrobe"]）
+  ✓ s5_wardrobe 又紧跟在 s4b_1089 后面（["s0_maze", "s1_phone", "s2_books", "s3_desk", "s4_soup", "s4b_1089", "s5_wardrobe"]）
+  ✓ week1.s4b_1089 在 week1_dialogue.json 里
+  ✓ s4b_1089 里恰好有一条 ["panel", "mindread"]（实测 1 条）
+  ✓ 「…最后一定是 1089，对吧。」后面紧跟 ["formula1089"] 算式行（台词行 12 / 算式行 13）
+  ✓ panel_title() 是「读心术 · 1089」（读心术 · 1089）
+  ✓ panel_hint() 讲了这一关怎么玩（想一个三位数 → 倒过来相减 → 报出最小的那位数）
+  ✓ 四屏都建出来了（Step1Box / Step2Box / Step3Box / RevealBox）
+  ✓ 开局只看得见第 ① 屏
+  ✓ 第 ① 屏不再要玩家在电脑上输入三位数
+  ✓ 第 ② 屏不再要玩家在电脑上输入差
+  ✓ 第 ① ② 屏不再有反馈行（纯文案过场）
+  ✓ 第 ① 屏有「想好了。」继续按钮
+  ✓ 第 ① 屏的继续按钮自动拿到焦点（按空格 / 回车就能走）
+  ✓ 点「想好了。」切到第 ② 屏
+  ✓ 第 ② 屏有「算好了。」继续按钮
+  ✓ 第 ② 屏的继续按钮自动拿到焦点（按空格 / 回车就能走）
+  ✓ 点「算好了。」切到第 ③ 屏
+  ✓ 第 ③ 屏保留一位数输入框（max_length=1）
+  ✓ 第 ③ 屏按钮写着「告诉你」
+  ✓ 第 ③ 屏的输入框自动拿到焦点
+  ✓ 第 ③ 屏文案改成引导玩家报「最小的那位数 = 过去」（刘忆说：这个三位数的个位、十位、百位，分别是你的过去、现在和未来。 | 刘忆说：我需要你的过去作为基础来推断你的现在和未来，但是我能感觉到你的过去并没有现在或者未来如意，所以大概率数字最小的那位数代表了你的过去。你能把它告诉我吗？ | ）
+  ✓ 第 ③ 屏空输入给提示，不进揭晓（先在上面那个框里填一位数 —— 你那个差里最小的那位。）
+  ✓ 报了一位数就切到揭晓屏（第 ④ 屏）
+  ✓ 揭晓屏上有「隐士」
+  ✓ 揭晓里的过去 / 未来按玩家报的数字来（1 / 8）
+  ✓ 揭晓里的现在是 9
+  ✓ 算式已挪出面板：揭晓屏不再带 1089 算式卡片
+  ✓ 面板里没有算式屏 / 「继续。」按钮（算式改由对话运行时出）
+  ✓ 揭晓屏的 FinishButton 写着「……好吧。」
+  ✓ 揭晓屏的「……好吧。」自动拿到焦点（按空格 / 回车就能走）
+  ✓ 按「……好吧。」只发一次 finished（发了 1 次）
+  ✓ 收尾结果里 ok = true（{ "ok": true, "past": 1, "future": 8, "id": "mindread" }）
+  ✓ 收尾结果里 past = 1（{ "ok": true, "past": 1, "future": 8, "id": "mindread" }）
+  ✓ 收尾结果里 future = 8（{ "ok": true, "past": 1, "future": 8, "id": "mindread" }）
+  ✓ 四屏内容没有把 900×540 的框架顶高（框架 (928.0, 540.0)）
+  ✓ 一周目场景（week1_1.tscn）建起来了
+[Prelude] 进入走位房间：dorm_room_d1a（第 0 段 第 52 行）
+  · 走位 1：房间 dorm_room_d1a，目标「室友的书桌」，第 0 段第 52 行，回 res://scenes/week1/week1_1.tscn
+  ✓ 这次走位声明了目标物件（["goal"]）
+  ✓ 记下了回一周目这一幕的场景（res://scenes/week1/week1_1.tscn）
+  ✓ 第 1 次走位走的房间正确（dorm_room_d1a）
+  ✓ 点完「看完了」回来，对话场景建起来了
+  ✓ 回来之后停在走位时那一段（期望 0 实际 0）
+  ✓ 回来之后确实往下播了（_row_index=53（恢复点 52））
+  ✓ 回来之后没有重播标题卡
+  ✓ 回来之后没有掉进「查看完毕」兜底模式
+  ✓ 接着播的正是「室友的书桌」的追加台词（期望「这些东西原本不在这个寝室里的。」实际「这些东西原本不在这个寝室里的。」）
+[Prelude] 进入走位房间：dorm_room_d1b（第 0 段 第 57 行）
+  · 走位 2：房间 dorm_room_d1b，目标「黑箱」，第 0 段第 57 行，回 res://scenes/week1/week1_1.tscn
+  ✓ 这次走位声明了目标物件（["goal"]）
+  ✓ 记下了回一周目这一幕的场景（res://scenes/week1/week1_1.tscn）
+  ✓ 第 2 次走位走的房间正确（dorm_room_d1b）
+  · 走位 2 模拟：收起星星 · 解开黑箱迷宫
+  ✓ 点完「看完了」回来，对话场景建起来了
+  ✓ 回来之后停在走位时那一段（期望 0 实际 0）
+  ✓ 回来之后确实往下播了（_row_index=58（恢复点 57））
+  ✓ 回来之后没有重播标题卡
+  ✓ 回来之后没有掉进「查看完毕」兜底模式
+[Prelude] 打开面板：gesture
+  ✓ 面板 gesture 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_gesture.gd 实际 res://scripts/week1/panel_gesture.gd）
+[Prelude] 面板完成：gesture → { "id": "gesture" }
+  ✓ 过关结果写进了 week1_result_gesture
+  ✓ 过关后面板收掉了
+[Prelude] 打开面板：memo
+  ✓ 面板 memo 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_memo.gd 实际 res://scripts/week1/panel_memo.gd）
+[Prelude] 面板完成：memo → { "id": "memo" }
+  ✓ 过关结果写进了 week1_result_memo
+  ✓ 过关后面板收掉了
+[Prelude] 进入走位房间：dorm_room（第 2 段 第 10 行）
+  · 走位 3：房间 dorm_room，目标「书架」，第 2 段第 10 行，回 res://scenes/week1/week1_1.tscn
+  ✓ 这次走位声明了目标物件（["goal"]）
+  ✓ 记下了回一周目这一幕的场景（res://scenes/week1/week1_1.tscn）
+  ✓ 第 3 次走位走的房间正确（dorm_room）
+  ✓ 点完「看完了」回来，对话场景建起来了
+  ✓ 回来之后停在走位时那一段（期望 2 实际 2）
+  ✓ 回来之后确实往下播了（_row_index=11（恢复点 10））
+  ✓ 回来之后没有重播标题卡
+  ✓ 回来之后没有掉进「查看完毕」兜底模式
+  ✓ 接着播的正是「书架」的追加台词（期望「别只看书脊。数字不在那上面。」实际「别只看书脊。数字不在那上面。」）
+[Prelude] 打开面板：bookshelf
+  ✓ 面板 bookshelf 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_bookshelf.gd 实际 res://scripts/week1/panel_bookshelf.gd）
+[Prelude] 面板完成：bookshelf → { "id": "bookshelf" }
+  ✓ 过关结果写进了 week1_result_bookshelf
+  ✓ 过关后面板收掉了
+[Prelude] 进入走位房间：dorm_room（第 3 段 第 10 行）
+  · 走位 4：房间 dorm_room，目标「室友的书桌」，第 3 段第 10 行，回 res://scenes/week1/week1_1.tscn
+  ✓ 这次走位声明了目标物件（["goal"]）
+  ✓ 记下了回一周目这一幕的场景（res://scenes/week1/week1_1.tscn）
+  ✓ 第 4 次走位走的房间正确（dorm_room）
+  ✓ 点完「看完了」回来，对话场景建起来了
+  ✓ 回来之后停在走位时那一段（期望 3 实际 3）
+  ✓ 回来之后确实往下播了（_row_index=11（恢复点 10））
+  ✓ 回来之后没有重播标题卡
+  ✓ 回来之后没有掉进「查看完毕」兜底模式
+  ✓ 接着播的正是「室友的书桌」的追加台词（期望「桌上摆着七件不该在那儿的东西。不，是七件被人动过的东西。」实际「桌上摆着七件不该在那儿的东西。不，是七件被人动过的东西。」）
+[Prelude] 打开面板：desk
+  ✓ 面板 desk 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_desk.gd 实际 res://scripts/week1/panel_desk.gd）
+[Prelude] 面板完成：desk → { "id": "desk" }
+  ✓ 过关结果写进了 week1_result_desk
+  ✓ 过关后面板收掉了
+[Prelude] 打开面板：soup
+  ✓ 面板 soup 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_soup.gd 实际 res://scripts/week1/panel_soup.gd）
+[Prelude] 面板完成：soup → { "id": "soup" }
+  ✓ 过关结果写进了 week1_result_soup
+  ✓ 过关后面板收掉了
+[Prelude] 打开面板：mindread
+  ✓ 面板 mindread 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_mindread.gd 实际 res://scripts/week1/panel_mindread.gd）
+[Prelude] 面板完成：mindread → { "id": "mindread" }
+  ✓ 过关结果写进了 week1_result_mindread
+  ✓ 过关后面板收掉了
+[Prelude] 进入走位房间：dorm_room（第 6 段 第 8 行）
+  · 走位 5：房间 dorm_room，目标「衣柜」，第 6 段第 8 行，回 res://scenes/week1/week1_1.tscn
+  ✓ 这次走位声明了目标物件（["goal"]）
+  ✓ 记下了回一周目这一幕的场景（res://scenes/week1/week1_1.tscn）
+  ✓ 第 5 次走位走的房间正确（dorm_room）
+  ✓ 点完「看完了」回来，对话场景建起来了
+  ✓ 回来之后停在走位时那一段（期望 6 实际 6）
+  ✓ 回来之后确实往下播了（_row_index=9（恢复点 8））
+  ✓ 回来之后没有重播标题卡
+  ✓ 回来之后没有掉进「查看完毕」兜底模式
+  ✓ 接着播的正是「衣柜」的追加台词（期望「柜门内侧贴着一张便利贴：『别把外套挂反。』」实际「柜门内侧贴着一张便利贴：『别把外套挂反。』」）
+[Prelude] 打开面板：wardrobe
+  ✓ 面板 wardrobe 挂的脚本是登记表里那个（期望 res://scripts/week1/panel_wardrobe.gd 实际 res://scripts/week1/panel_wardrobe.gd）
+[Prelude] 面板完成：wardrobe → { "id": "wardrobe" }
+  ✓ 过关结果写进了 week1_result_wardrobe
+  ✓ 过关后面板收掉了
+  ✓ 整幕点到了幕间（一周目结束）（点了 282 步）
+  ✓ 对话流里真的弹过 1089 算式卡（past 缺失时兜底 1 → 198 ＋ 891 ＝ 1089）（198 ＋ 891 ＝ 1089 | 点击 / 空格  继续）
+  ✓ 七个面板按顺序都弹过了（第一天黑箱迷宫改在走位 B 里弹，不走对话行）（["gesture", "memo", "bookshelf", "desk", "soup", "mindread", "wardrobe"]）
+  ✓ 五次走位分别要求走到室友的书桌（第一天两次）/ 黑箱 / 书架 / 衣柜（["室友的书桌", "黑箱", "书架", "室友的书桌", "衣柜"]）
+  ✓ maze 有完成记录
+  ✓ gesture 有完成记录
+  ✓ memo 有完成记录
+  ✓ bookshelf 有完成记录
+  ✓ desk 有完成记录
+  ✓ soup 有完成记录
+  ✓ mindread 有完成记录
+  ✓ wardrobe 有完成记录
+  ✓ 幕间告诉玩家六关播完接下来进前日谈（第一天 结束   ·   点击 / 空格  进入前日谈）
+  ✓ 一周目六关播完后的下一幕是 prelude_1.tscn（res://scenes/prelude/prelude_1.tscn）
+  ✓ 前日谈演完回到一周目只播收尾（不重播六关）（["s6_ending"]）
+  ✓ 收尾播完接的是二周目（res://scenes/week2/week2_1.tscn）
+  ✓ 带着 prelude_done 再进一周目：场景建起来了
+  ✓ 收尾那一段也点到了幕间（点了 3 步）
+  ✓ 收尾播的是「第二天 / 寝室里没有人」那张标题卡（第二天 | 寝室里没有人 | 点击 / 空格  继续）
+  ✓ 从前的六关没有再播一遍（面板没有第 8 个）（["gesture", "memo", "bookshelf", "desk", "soup", "mindread", "wardrobe"]）
+  ✓ 从前的六关没有再播一遍（走位没有第 6 次）（["室友的书桌", "黑箱", "书架", "室友的书桌", "衣柜"]）
+  ✓ 找得到 SaveGame 自动加载
+  ✓ 「继续上次」指向一周目这一幕（res://scenes/week1/week1_1.tscn）
+  ✓ 存档把 prelude_done 一起带了回来（读档后仍然只播收尾）
+[Prelude] 继续上次：跳到第 0 段（存档时间 2026-10-16 18:54:01）
+  ✓ 读档接着播也走到了幕间（点了 3 步）
+  ✓ 读档接着播播的是收尾那张标题卡（第二天 | 寝室里没有人 | 点击 / 空格  继续）
+  ✓ 读档接着播没有重播六关（["gesture", "memo", "bookshelf", "desk", "soup", "mindread", "wardrobe"]）
+=========================================
+共 233 项检查，失败 1 项
+McpInteractionServer: Stopped

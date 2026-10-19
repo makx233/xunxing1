@@ -1,0 +1,11 @@
+# Godot 4
+.import/
+*.import
+.godot/
+*.gdshadercache
+*.res
+*.uuid
+export/
+# 系统缓存文件
+.DS_Store
+Thumbs.db
